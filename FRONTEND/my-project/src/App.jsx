@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 flex flex-col items-center p-6">
       <h1 style={{ fontSize: '3.5rem', fontWeight: 'bold', color: '#1e40af', marginBottom: '24px', textAlign: 'center' }}>
-           AI Text Summarizer
+           Ai summarizer
       </h1>
 
 <textarea
@@ -66,10 +66,10 @@ function App() {
         <div className="flex flex-col md:flex-row items-center justify-between mt-4 gap-4">
           <button
             onClick={summarize}
-            className="flex-1 md:flex-none w-full md:w-auto px-6 py-3 bg-gradient-to-r from-rose-500 to-purple-500 text-white font-semibold rounded-3xl shadow-lg hover:scale-105 transform transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-1 md:flex-none w-full md:min-w-[300px] px-12 py-8 bg-gradient-to-r from-rose-500 to-purple-600 text-white text-3xl font-extrabold rounded-[3rem] shadow-2xl hover:scale-105 active:scale-95 transform transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={!aiReady || loading}
           >
-            {loading ? "summarizing" : "summarize"}
+            {loading ? "summarizing" : "Summarize"}
           </button>
 
           <button
@@ -78,9 +78,9 @@ function App() {
               setSummary("");
               setError("");
             }}
-            className="flex-1 md:flex-none w-full md:w-auto px-6 py-3 bg-gray-200 text-gray-800 font-semibold rounded-3xl shadow hover:bg-gray-300 transition-all"
+            className="flex-1 md:flex-none w-full md:min-w-[200px] px-12 py-8 bg-gray-200 text-gray-800 text-2xl font-bold rounded-[3rem] shadow-xl hover:bg-gray-300 active:scale-95 transition-all duration-300"
           >
-            clear
+            Clear
           </button>
         </div>
 
