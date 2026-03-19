@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 function App() {
   const [text, setText] = useState("");
   const [summary, setSummary] = useState("");
@@ -72,7 +71,7 @@ function App() {
             className="flex-1 md:flex-none w-full md:w-auto px-6 py-3 bg-gradient-to-r from-rose-500 to-purple-500 text-white font-semibold rounded-3xl shadow-lg hover:scale-105 transform transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={!aiReady || loading}
           >
-            {loading ? "summarizing" : "Smmarize"}
+            {loading ? "summarizing" : "summarize"}
           </button>
 
           <button
@@ -90,12 +89,12 @@ function App() {
         {summary && (
           <div className="mt-6 p-6 bg-white border border-gray-200 rounded-3xl shadow-lg">
             <div className="flex justify-between items-start mb-3">
-              <h2 className="text-2xl font-semibold text-gray-800">summary:</h2>
+              <h2 className="text-2xl font-semibold text-gray-800">Summary:</h2>
             
-          
-          
-          
-          
+            
+            
+            
+            
             
             </div>
             <p className="text-gray-700 leading-relaxed">{summary}</p>
