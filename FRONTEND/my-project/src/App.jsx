@@ -6,7 +6,6 @@ function App() {
   const [error, setError] = useState("");
   const [aiReady, setAiReady] = useState(false);
 
-  // Check if AI is ready
   useEffect(() => {
     const checkReady = setInterval(() => {
       if (window.puter?.ai?.chat && typeof window.puter.ai.chat === "function") {
@@ -18,7 +17,6 @@ function App() {
     return () => clearInterval(checkReady);
   }, []);
 
-  // Summarize function
   const summarize = async () => {
     if (!text.trim()) return;
 
@@ -39,7 +37,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 flex flex-col items-center p-6">
       <h1 style={{ fontSize: '3.5rem', fontWeight: 'bold', color: '#1e40af', marginBottom: '24px', textAlign: 'center' }}>
-          AI Text Summarizer
+           AI Text Summarizer
       </h1>
 
 <textarea
@@ -90,12 +88,12 @@ function App() {
           <div className="mt-6 p-6 bg-white border border-gray-200 rounded-3xl shadow-lg">
             <div className="flex justify-between items-start mb-3">
               <h2 className="text-2xl font-semibold text-gray-800">Summary:</h2>
-            
-            
-            
-            
-            
-            
+              <button
+                onClick={() => navigator.clipboard.writeText(summary)}
+                className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium hover:bg-blue-200 transition"
+              >
+                Copy
+              </button>
             </div>
             <p className="text-gray-700 leading-relaxed">{summary}</p>
           </div>
